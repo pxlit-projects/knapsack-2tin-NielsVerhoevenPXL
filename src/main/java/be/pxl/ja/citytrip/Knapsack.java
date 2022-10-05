@@ -23,12 +23,15 @@ public class Knapsack {
     }
 
     public void add(Attraction Attraction) {
-
-        if (getCurrentWeight() + Attraction.getWeight() > maximumCapacity) {
-            throw new KnapsackFullException(String.format("cannot add Attraction [%s]. Maximum capacity reached\n\n" +
-                    "List of Attractions:\n%s", Attraction.getName(), getItems().toString()));
-        } else {
-            items.add(Attraction);
+        try{
+            if (getCurrentWeight() + Attraction.getWeight() > maximumCapacity) {
+                throw new KnapsackFullException(String.format("cannot add Attraction [%s]. Maximum capacity reached\n\n" +
+                        "List of Attractions:\n%s", Attraction.getName(), getItems().toString()));
+            } else {
+                items.add(Attraction);
+            }
+        } catch (KnapsackFullException e){
+            System.out.println(e);
         }
 
 

@@ -2,7 +2,7 @@ package be.pxl.ja.citytrip;
 
 public class VisitLondon {
     public static void main(String[] args) {
-        Knapsack knapsack = new Knapsack(5);
+        Knapsack knapsack = new Knapsack(2);
         LondonAttractions attractions = new LondonAttractions();
 
         attractions.add(new Attraction("Westminster Abbey", 0.5, 7));
